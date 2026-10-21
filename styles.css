@@ -56,7 +56,7 @@ a:focus-visible {
 .site-header,
 main,
 .site-footer {
-  width: min(100% - 3rem, 1120px);
+  width: min(100% - 3rem, 880px);
   margin-inline: auto;
 }
 
@@ -111,7 +111,7 @@ li + li {
 }
 
 .section {
-  margin-bottom: 4.2rem;
+  margin-bottom: 2.6rem;
 }
 
 .site-footer {
@@ -140,7 +140,7 @@ li + li {
   .site-header,
   main,
   .site-footer {
-    width: min(100% - 2rem, 1120px);
+    width: min(100% - 2rem, 880px);
   }
 
   .site-header {
@@ -157,6 +157,6 @@ li + li {
   }
 
   .section {
-    margin-bottom: 3.1rem;
+    margin-bottom: 2.2rem;
   }
 }
