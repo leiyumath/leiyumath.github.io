@@ -55,7 +55,7 @@ a:focus-visible {
 .site-header,
 main,
 .site-footer {
-  width: min(100% - 3rem, 880px);
+  width: min(100% - 3rem, 1440px);
   margin-inline: auto;
 }
 
@@ -134,14 +134,6 @@ li + li {
   padding-bottom: 1.8rem;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.visitor-counter {
-  display: inline-block;
-  height: 0.78rem;
-  margin-left: 0.05rem;
-  opacity: 0.74;
-  vertical-align: -0.02rem;
 }
 
 @media (max-width: 700px) {

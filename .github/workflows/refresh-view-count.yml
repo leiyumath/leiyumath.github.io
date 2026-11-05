@@ -1,0 +1,52 @@
+name: Refresh view count
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/refresh-view-count.yml]
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: refresh-view-count
+
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Update the public count snapshot
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          total=$(curl --fail --silent --show-error --max-time 20 \
+            'https://hits.sh/api/urns/l-e-i-y-u.github.io' \
+            | jq -ce '.total | select(type == "number" and . >= 0 and . <= 9007199254740991 and . == floor)')
+
+          cd "$(mktemp -d)"
+          git init --initial-branch=view-count
+          git remote add origin "https://github.com/$REPOSITORY.git"
+          gh auth setup-git --hostname github.com
+
+          # An empty repository creates a data-only branch on the first run.
+          if git ls-remote --exit-code origin refs/heads/view-count; then
+            git fetch --depth=1 origin refs/heads/view-count
+            git switch --detach FETCH_HEAD
+          elif [ "$?" -ne 2 ]; then
+            exit 1
+          fi
+
+          printf '%s\n' "$total" > view-count.json
+          git add view-count.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'Refresh view count'
+          git push origin HEAD:refs/heads/view-count

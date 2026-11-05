@@ -31,14 +31,12 @@ Then visit `http://localhost:8000`.
 
 ## Visitor Counter
 
-The homepage footer uses a lightweight external SVG counter styled like plain
-footer text, so it works on GitHub Pages without a separate backend:
-
-```text
-Last edited: July 8, 2026. Views: [count]
-```
-
-This is a simple page-view counter, not a unique-visitor analytics system.
+The homepage loads the existing Hits.sh counter image to record page views.
+The footer displays the count as text. The **Refresh view count** GitHub Actions
+workflow reads Hits.sh statistics about every six hours and stores the total in
+`view-count.json` on the `view-count` branch. It can also run manually from the
+Actions tab. The homepage displays the number in `index.html` if it cannot
+load the snapshot.
 
 ## GitHub Pages
 

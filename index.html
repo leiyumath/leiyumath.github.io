@@ -90,13 +90,21 @@
     <footer class="site-footer">
       <p>
         Last edited: Nov. 5, 2026.
-        Total views since July 2026:
-        <img
-          class="visitor-counter"
-          src="https://hits.sh/l-e-i-y-u.github.io.svg?style=flat&amp;label=%20&amp;color=f1f5f1&amp;labelColor=f1f5f1"
-          alt="view count"
-        >
+        Total views since July 2026: <span id="view-count">265</span>
       </p>
+      <img src="https://hits.sh/l-e-i-y-u.github.io.svg" alt="" hidden>
     </footer>
+    <script>
+      fetch("https://raw.githubusercontent.com/leiyumath/leiyumath.github.io/view-count/view-count.json")
+        .then(response => response.ok ? response.json() : null)
+        .then(total => {
+          if (Number.isSafeInteger(total) && total >= 0) {
+            document.getElementById("view-count").textContent = total.toLocaleString("en-US");
+          }
+        })
+        .catch(() => {
+          // Keep the initial count when the snapshot is unavailable.
+        });
+    </script>
   </body>
 </html>
