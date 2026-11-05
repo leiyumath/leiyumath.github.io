@@ -20,7 +20,7 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: Georgia, "Times New Roman", Times, serif;
-  line-height: 1.65;
+  line-height: 1.5;
 }
 
 a {
@@ -55,7 +55,7 @@ a:focus-visible {
 .site-header,
 main,
 .site-footer {
-  width: min(100% - 3rem, 40rem);
+  width: min(100% - 3rem, 880px);
   margin-inline: auto;
 }
 
