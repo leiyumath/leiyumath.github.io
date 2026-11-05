@@ -133,7 +133,15 @@ li + li {
 .site-footer {
   padding-bottom: 1.8rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.site-footer::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  margin-bottom: 0.8rem;
+  border-top: 1px solid #c7d2ca;
 }
 
 @media (max-width: 700px) {
