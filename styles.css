@@ -59,39 +59,32 @@ main,
   margin-inline: auto;
 }
 
+main {
+  display: flow-root;
+}
+
 .profile-overview {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(288px, 32vw, 384px);
-  grid-template-rows: auto auto 1fr;
-  column-gap: 3rem;
-  row-gap: 1.7rem;
-  align-items: start;
   padding-block: 2.2rem 2.4rem;
 }
 
 .site-header {
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
+  margin-bottom: 1.7rem;
 }
 
 .profile-overview .profile-about {
-  grid-column: 1;
-  grid-row: 2;
   margin-bottom: 0;
 }
 
-.profile-overview .profile-contact {
-  grid-column: 1;
-  grid-row: 3;
-  margin-bottom: 0;
+.profile-contact {
+  margin-top: 0.5rem;
+  font-style: normal;
 }
 
 .site-photo-link {
   display: block;
-  grid-column: 2;
-  grid-row: 1 / span 3;
-  width: 100%;
+  float: right;
+  width: clamp(288px, 32vw, 384px);
+  margin: 0 0 1.5rem 3rem;
   cursor: zoom-in;
   border-radius: 2px;
 }
@@ -202,6 +195,7 @@ li + li {
   }
 
   .profile-overview {
+    display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
     row-gap: 1.5rem;
@@ -209,6 +203,8 @@ li + li {
   }
 
   .site-header {
+    grid-row: 1;
+    margin-bottom: 0;
     text-align: center;
   }
 
@@ -225,15 +221,13 @@ li + li {
     grid-row: 3;
   }
 
-  .profile-overview .profile-contact {
-    grid-row: 4;
-  }
-
   .site-photo-link {
+    float: none;
     grid-column: 1;
     grid-row: 2;
     justify-self: center;
     width: min(100%, 288px);
+    margin: 0;
   }
 
   h2 {

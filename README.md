@@ -8,10 +8,11 @@ The profile photograph is stored locally as `assets/ku-campus.jpg`, resized for
 the web from the [University of Kansas campus photograph](https://places.ku.edu/sites/places/files/2022-08/2104725_MK_Campus.11.5.0111.jpg).
 Its display crop is controlled by `.site-photo` in `styles.css`.
 The desktop layout uses a centered content area up to 1120px wide and a responsive
-288–384px square profile image alongside the name, About, and Contact sections.
-About and Contact share the same left column. The square crop brings the sculpture
+288–384px square profile image floated to the right. The introduction and News
+flow around the image and return to full width below it. The About section
+includes an email contact. The square crop brings the sculpture
 closer. On small screens the name and an image up to 288px wide are stacked and
-centered, with the About and Contact sections below both.
+centered, with the About section below both.
 Clicking the photograph opens the full-resolution original in a new tab. The
 image credit in Others links to KU's official [Tai Chi Figure introduction](https://places.ku.edu/artwork/tai-chi-figure).
 
