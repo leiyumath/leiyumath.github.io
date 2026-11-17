@@ -2,6 +2,19 @@
 
 A minimal static academic homepage for GitHub Pages.
 
+## Profile Image
+
+The profile photograph is stored locally as `assets/ku-campus.jpg`, resized for
+the web from the [University of Kansas campus photograph](https://places.ku.edu/sites/places/files/2022-08/2104725_MK_Campus.11.5.0111.jpg).
+Its display crop is controlled by `.site-photo` in `styles.css`.
+The desktop layout uses a centered content area up to 1120px wide and a responsive
+288–384px square profile image alongside the name, About, and Contact sections.
+About and Contact share the same left column. The square crop brings the sculpture
+closer. On small screens the name and an image up to 288px wide are stacked and
+centered, with the About and Contact sections below both.
+Clicking the photograph opens the full-resolution original in a new tab. The
+image credit in Others links to KU's official [Tai Chi Figure introduction](https://places.ku.edu/artwork/tai-chi-figure).
+
 ## CV
 
 The CV is kept in this repository:
@@ -28,6 +41,19 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+## Hidden Learning Announcements
+
+Four News entries remain in `index.html` with their original text, links, dates,
+and chronological positions. Each has `hidden data-news-category="learning"`:
+
+- June 28, 2026: p-adic Langlands.
+- April 12, 2026: geometrization of LLC.
+- March 6, 2026: prismatic cohomology.
+- September 17, 2025: derived categories of schemes.
+
+To restore any of these announcements, remove its `hidden` attribute. Keep
+`data-news-category="learning"` so the entries remain easy to find.
 
 ## Visitor Counter
 

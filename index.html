@@ -13,28 +13,49 @@
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header class="site-header">
-      <h1>Lei Yu <span class="name-zh" lang="zh-Hans">余磊</span></h1>
-      <p class="site-role">PhD student in mathematics · Purdue University</p>
-    </header>
-
     <main id="main">
-      <section class="section" aria-labelledby="about">
-        <h2 id="about">About</h2>
-        <p>I joined Purdue's mathematics PhD program in August 2026.</p>
-        <p>
-          See my <a href="assets/Lei-Yu-CV.pdf">CV (PDF)</a> for more details.
-        </p>
-      </section>
+      <div class="profile-overview">
+        <header class="site-header">
+          <h1>Lei Yu <span class="name-zh" lang="zh-Hans">余磊</span></h1>
+          <p class="site-role">
+            PhD student in mathematics<span class="role-separator"> · </span><span class="site-affiliation">Purdue University</span>
+          </p>
+        </header>
 
-      <section class="section" aria-labelledby="contact">
-        <h2 id="contact">Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:lastname1741@purdue.edu">lastname1741@purdue.edu</a>
-        </p>
-        <p>Address: 150 N. University Street, West Lafayette, IN 47907-2067</p>
-      </section>
+        <a
+          class="site-photo-link"
+          href="https://places.ku.edu/sites/places/files/2022-08/2104725_MK_Campus.11.5.0111.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View original photograph of Tai Chi Figure (opens in a new tab)"
+          title="View original photograph (opens in a new tab)"
+        >
+          <img
+            class="site-photo"
+            src="assets/ku-campus.jpg"
+            alt="Tai Chi Figure, a bronze sculpture among autumn trees at the University of Kansas"
+            width="960"
+            height="1440"
+          >
+        </a>
+
+        <section class="section profile-about" aria-labelledby="about">
+          <h2 id="about">About</h2>
+          <p>I joined Purdue's mathematics PhD program in August 2026.</p>
+          <p>
+            See my <a href="assets/Lei-Yu-CV.pdf">CV (PDF)</a> for more details.
+          </p>
+        </section>
+
+        <section class="section profile-contact" aria-labelledby="contact">
+          <h2 id="contact">Contact</h2>
+          <p>
+            Email:
+            <a href="mailto:lastname1741@purdue.edu">lastname1741@purdue.edu</a>
+          </p>
+          <p>Address: 150 N. University Street, West Lafayette, IN 47907-2067</p>
+        </section>
+      </div>
 
       <section class="section" aria-labelledby="fun">
         <h2 id="fun">News</h2>
@@ -43,9 +64,10 @@
         <ul>
           <li>
             Nov. 7: Off to KU, Copenhagen, for
-            <a href="https://www.math.ku.dk/english/calendar/events/2026/arithmetic-geometry-and-higher-algebra/">Arithmetic Geometry and Higher Algebra</a>.
+            <a href="https://www.math.ku.dk/english/calendar/events/2026/arithmetic-geometry-and-higher-algebra/">Lars Hesselholt's 60th birthday conference</a>.
           </li>
-          <li>
+          <!-- Learning announcements are preserved in place. Remove hidden to restore. -->
+          <li hidden data-news-category="learning">
             June 28: Tried to learn some <span class="math">p</span>-adic Langlands. Informal attempts
             recorded
             <a href="https://docs.google.com/document/d/19lnc4EU9wNeHWdyDJj0RSZbjOHLgFLzK8oT-_V11nG4/edit?usp=sharing">here</a>,
@@ -55,13 +77,13 @@
             June 14: Travelled to KIAS, Seoul, for the
             <a href="http://www.davidrenshawhansen.net/2026KIASsummerschool.html">Categorical Langlands Summit</a>.
           </li>
-          <li>
+          <li hidden data-news-category="learning">
             Apr. 12: Started learning Scholze 2020's course on the
             geometrization of LLC. Some informal attempts recorded
             <a href="https://docs.google.com/document/d/1SJg-TgCx-U7qTNz_1ywKemDBb1KMrFOSweNiGWFkwp8/edit?usp=sharing">here</a>,
             in Chinese.
           </li>
-          <li>
+          <li hidden data-news-category="learning">
             Mar. 6: Tried to learn prismatic cohomology with the help of
             open resources. Some of my boring attempts are listed
             <a href="https://docs.google.com/document/d/1HAieTkJyGg-hn2i5jXrq7TUJ7mnpDDFi1p4CLwDjo6A/edit?usp=sharing">here</a>,
@@ -75,7 +97,7 @@
             Oct. 23: Left for UMN, Minneapolis, to attend
             <a href="https://cse.umn.edu/math/events/equivariant-motivic-and-physical-topology-midwest">Igor Kriz's 60th birthday conference</a>.
           </li>
-          <li>
+          <li hidden data-news-category="learning">
             Sept. 17: Attempted to learn about derived categories of schemes.
             Some notes can be found
             <a href="https://drive.google.com/drive/folders/1bdmqSeiIsPl0nQL635Tfmn8jxRCSpXOy?usp=share_link">here</a>.
@@ -98,6 +120,9 @@
             <a href="https://en.wikipedia.org/wiki/Pipa_xing">the original poem</a>
             and its
             <a href="https://www.bilibili.com/video/BV1VaREB1EWy">modern non-canonical adaptation</a>
+          </li>
+          <li>
+            <a href="https://places.ku.edu/artwork/tai-chi-figure">Tai Chi Figure</a>
           </li>
         </ul>
       </section>
