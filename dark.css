@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+  --background: #191e1b;
+  --text: #dee6df;
+  --muted: #b0bbb2;
+  --accent: #a9d1b7;
+  --divider: #46574c;
+  --photo-max-width: 352px;
+  --photo-mobile-width: 272px;
+}
+
+.site-photo-link--light {
+  display: none;
+}
+
+.site-photo-link--dark {
+  display: block;
+}
+
+.site-photo-link--dark .site-photo {
+  aspect-ratio: 15 / 16;
+  object-position: 50% 18%;
+}

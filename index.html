@@ -3,12 +3,49 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <meta
       name="description"
       content="Lei Yu's personal homepage: mathematics, notes, and academic information."
     >
     <title>Lei Yu's Personal Homepage</title>
-    <link rel="stylesheet" href="styles.css?v=20261117-2">
+    <link rel="stylesheet" href="styles.css?v=20261126-3">
+    <link id="dark-theme" rel="stylesheet" href="dark.css?v=20261126-2" media="(prefers-color-scheme: dark)">
+    <script>
+      (() => {
+        const darkTheme = document.getElementById("dark-theme");
+        const storageKey = "homepage-theme";
+        const themeMedia = {
+          light: "not all",
+          dark: "all",
+        };
+
+        try {
+          const savedTheme = localStorage.getItem(storageKey);
+          if (savedTheme === "light" || savedTheme === "dark") {
+            darkTheme.media = themeMedia[savedTheme];
+          }
+        } catch {
+          // The theme still follows the system when storage is unavailable.
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const toggle = document.getElementById("theme-toggle");
+          toggle.addEventListener("click", () => {
+            const nextTheme = window.matchMedia(darkTheme.media).matches ? "light" : "dark";
+            darkTheme.media = themeMedia[nextTheme];
+
+            try {
+              localStorage.setItem(storageKey, nextTheme);
+            } catch {
+              // The selection still applies to the current page.
+            }
+          });
+
+          toggle.hidden = false;
+        });
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -16,7 +53,7 @@
     <main id="main">
       <div class="profile-overview">
         <a
-          class="site-photo-link"
+          class="site-photo-link site-photo-link--light"
           href="https://places.ku.edu/sites/places/files/2022-08/2104725_MK_Campus.11.5.0111.jpg"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,6 +66,25 @@
             alt="Tai Chi Figure, a bronze sculpture among autumn trees at the University of Kansas"
             width="960"
             height="1440"
+            loading="lazy"
+          >
+        </a>
+
+        <a
+          class="site-photo-link site-photo-link--dark"
+          href="assets/dark-sculpture.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View full-size photograph of the sculpture (opens in a new tab)"
+          title="View full-size photograph (opens in a new tab)"
+        >
+          <img
+            class="site-photo"
+            src="assets/dark-sculpture.jpg"
+            alt="Black-and-white photograph of a sculpted face looking to the left"
+            width="1004"
+            height="1368"
+            loading="lazy"
           >
         </a>
 
@@ -124,9 +180,18 @@
     </main>
 
     <footer class="site-footer">
-      <p>
-        Updated Nov. 17, 2026 · <span id="view-count">265</span> views since July 2026
-      </p>
+      <div class="footer-meta">
+        <p>
+          Updated Nov. 17, 2026 · <span id="view-count">265</span> views since July 2026
+        </p>
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Click here to switch between light and dark themes"
+          hidden
+        >Click here</button>
+      </div>
       <img src="https://hits.sh/l-e-i-y-u.github.io.svg" alt="" hidden>
     </footer>
     <script>
